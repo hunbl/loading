@@ -785,7 +785,7 @@
     width: 100%;
     height: 1000px;
     position: absolute;
-    background-color: grey;
+    background-color: black;
     opacity: 0.5;
     z-index: 9999;
     top: 0;
@@ -794,5 +794,5 @@
 #lds-con {
     position: absolute;
     top: 100px;
-    left: 500px;
+    left: 400px;
 }

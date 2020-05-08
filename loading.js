@@ -1,16 +1,21 @@
-var lds_type = "default";
+var lds_type = 'default';
 function loading(type="", start=true) {
+    if (type !== '') lds_type = type;
+    var cls = document.getElementsByClassName('lds-'+lds_type);
+    var frm = document.getElementById('loading');
     if (start === true) {
-      if (type !== "") lds_type = type;
-      $('.lds-'+lds_type).show();
-      $('#lds-con').css('top', window.innerHeight/2-50);
-      $('#lds-con').css('left', window.innerWidth/2-50);
-      $('#loading').show();
+        var con = document.getElementById('lds-con');
+        cls[0].style.display = 'inline-block';
+        con.style.top = (window.innerHeight/2-50)+'px';
+        con.style.left = (window.innerWidth/2-50)+'px';
+        frm.style.display = 'block';
+        return lds_type;
     } else {
-        $('.lds-'+lds_type).hide();
-        $('#loading').hide();
+        cls[0].style.display = 'none';
+        frm.style.display = 'none';
+        return 'off';
     }
 }
 function loaded() {
-    loading(lds_type, false);
+    return loading(lds_type, false);
 }
